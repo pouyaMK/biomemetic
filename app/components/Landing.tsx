@@ -1,7 +1,7 @@
 
 
 "use client";
-
+import PhonePopup from "@/app/components/PhonePopOver";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -18,6 +18,8 @@ const features = [
 
 export default function BiomimeticHero() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [open, setOpen] = useState(false);
+const [selectedFeature, setSelectedFeature] = useState("");
 
   return (
     <section
@@ -332,6 +334,10 @@ export default function BiomimeticHero() {
         border-orange-100
         backdrop-blur-xl
       "
+      onClick={() => {
+        setOpen(true);
+        setSelectedFeature(item);
+      }}
     >
       {/* Animated Glow */}
       <motion.div
@@ -410,7 +416,13 @@ export default function BiomimeticHero() {
       </span>
     </motion.button>
   ))}
-</motion.div>
+      </motion.div>
+
+      <PhonePopup
+  open={open}
+  setOpen={setOpen}
+  selectedFeature={selectedFeature}
+/>
     </section>
   );
 }
