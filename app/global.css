@@ -1,0 +1,12 @@
+/* 
+ @import "tailwindcss";
+
+body {
+  font-family: var(--font-yekan-bakh) !important;
+} */
+
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-yekan-bakh);
+}
