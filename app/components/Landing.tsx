@@ -5,7 +5,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-
 // import img1 from "@/public/assets/imgs/InShot_20260531_182617855-removebg-preview.png"
 import img2 from "@/public/assets/imgs/InShot_20260531_182633539-removebg-preview.png";
 // import img3 from "@/public/assets/imgs/InShot_20260531_182650031-removebg-preview.png"
@@ -74,7 +73,7 @@ export default function BiomimeticHero() {
             viewport={{ once: true }}
             className="flex justify-center w-full"
           >
-            <div className="relative w-full max-w-[700px] h-[500px]">
+            <div className="relative w-full max-w-175 h-[500px]">
 
               {/* BUBBLE 1 */}
               <motion.div
@@ -95,7 +94,7 @@ export default function BiomimeticHero() {
                   rounded-full
                   scale-90
                   opacity-80
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-white/80
                   to-orange-200/40
                   backdrop-blur-xl
@@ -126,7 +125,7 @@ export default function BiomimeticHero() {
                   h-11
                   rounded-full
                   opacity-70
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-orange-100
                   to-white/50
                   backdrop-blur-lg
@@ -157,7 +156,7 @@ export default function BiomimeticHero() {
                   h-20
                   rounded-full
                   opacity-75
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-orange-200/40
                   to-white/40
                   backdrop-blur-xl
@@ -204,7 +203,7 @@ export default function BiomimeticHero() {
                     inset-0
                     rounded-[40px]
                     animate-pulse
-                    bg-gradient-to-r
+                    bg-linear-to-br
                     from-orange-100
                     via-orange-50
                     to-orange-100
@@ -269,51 +268,149 @@ export default function BiomimeticHero() {
       </div>
 
       {/* BUTTONS */}
-      <div className="grid grid-cols-2 gap-4 mt-10 px-5 max-w-md mx-auto">
-        {features.map((item, index) => (
-          <motion.button
-            key={index}
-            whileHover={{
-              scale: 1.05,
-              y: -4,
-            }}
-            whileTap={{ scale: 0.96 }}
-            className="
-              relative
-              overflow-hidden
-              text-sm
-              rounded-full
-              cursor-pointer
-              bg-gradient-to-br
-              from-orange-50/50
-              to-orange-200
-              px-5
-              py-4
-              font-bold
-              shadow-lg
-              border
-              border-orange-200
-            "
-          >
-            <span className="relative z-10">{item}</span>
+      {/* BUTTONS */}
+<motion.div
+  initial="hidden"
+  animate="show"
+  variants={{
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  }}
+  className="grid grid-cols-2 gap-4 mt-10 px-5 max-w-md mx-auto"
+>
+  {features.map((item, index) => (
+    <motion.button
+      key={index}
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: 40,
+          scale: 0.8,
+          rotate: -8,
+        },
+        show: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotate: 0,
+        },
+      }}
+      initial="hidden"
+      animate="show"
+      transition={{
+        duration: 0.7,
+        type: "spring",
+        stiffness: 120,
+      }}
+      whileHover={{
+        scale: 1.06,
+        y: -6,
+      }}
+      whileTap={{
+        scale: 0.95,
+      }}
+      className="
+        group
+        relative
+        overflow-hidden
+        text-sm
+        rounded-[22px]
+        cursor-pointer
+        bg-linear-to-br
+        from-orange-50
+        via-white
+        to-orange-200
+        px-5
+        py-4
+        font-bold
+        shadow-[0_10px_30px_rgba(255,140,0,0.18)]
+        border
+        border-orange-100
+        backdrop-blur-xl
+      "
+    >
+      {/* Animated Glow */}
+      <motion.div
+        animate={{
+          opacity: [0.4, 0.8, 0.4],
+          scale: [1, 1.15, 1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+        }}
+        className="
+          absolute
+          inset-0
+          bg-orange-200/20
+          blur-2xl
+        "
+      />
 
-            <motion.div
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "100%" }}
-              transition={{ duration: 0.8 }}
-              className="
-                absolute
-                top-0
-                left-0
-                w-1/2
-                h-full
-                bg-white/40
-                skew-x-12
-              "
-            />
-          </motion.button>
-        ))}
-      </div>
+      {/* Shine Effect */}
+      <motion.div
+        initial={{ x: "-150%" }}
+        whileHover={{ x: "250%" }}
+        transition={{ duration: 1 }}
+        className="
+          absolute
+          top-0
+          left-0
+          w-1/3
+          h-full
+          bg-white/50
+          skew-x-[-20deg]
+          blur-md
+        "
+      />
+
+      {/* Hover Border Glow */}
+      <div
+        className="
+          absolute
+          inset-0
+          rounded-[22px]
+          border
+          border-white/40
+          opacity-0
+          group-hover:opacity-100
+          transition-all
+          duration-500
+        "
+      />
+
+      {/* Floating Mini Bubble */}
+      <motion.div
+        animate={{
+          y: [0, -5, 0],
+        }}
+        transition={{
+          duration: 2.5,
+          repeat: Infinity,
+        }}
+        className="
+          absolute
+          top-2
+          right-3
+          w-2
+          h-2
+          rounded-full
+          bg-white/80
+          blur-[1px]
+        "
+      />
+
+      {/* TEXT */}
+      <span className="relative z-20 text-orange-700">
+        {item}
+      </span>
+    </motion.button>
+  ))}
+</motion.div>
     </section>
   );
 }
