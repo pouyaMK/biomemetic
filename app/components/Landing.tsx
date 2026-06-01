@@ -5,9 +5,8 @@ import PhonePopup from "@/app/components/PhonePopOver";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
-// import img1 from "@/public/assets/imgs/InShot_20260531_182617855-removebg-preview.png"
 import img2 from "@/public/assets/imgs/InShot_20260531_182633539-removebg-preview.png";
-// import img3 from "@/public/assets/imgs/InShot_20260531_182650031-removebg-preview.png"
+
 
 const features = [
   "چروک",
