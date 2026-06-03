@@ -172,7 +172,7 @@ function VideoCard({
           <div className="absolute inset-0 bg-black/10" />
 
           {/* LIGHT REFLECTION */}
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-white/20 to-transparent pointer-events-none" />
         </div>
       </div>
 

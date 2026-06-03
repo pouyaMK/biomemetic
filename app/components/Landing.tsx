@@ -268,8 +268,10 @@ const [selectedFeature, setSelectedFeature] = useState("");
         </div>
       </div>
 
+      <div className="w-full text-center mt-3">مشکل پوستتون را انتخاب کنید </div>
+
       {/* BUTTONS */}
-      {/* BUTTONS */}
+      
 <motion.div
   initial="hidden"
   animate="show"
@@ -281,7 +283,7 @@ const [selectedFeature, setSelectedFeature] = useState("");
       },
     },
   }}
-  className="grid grid-cols-2 gap-4 mt-10 px-5 max-w-md mx-auto"
+  className="grid grid-cols-2 gap-4 mt-3 px-5 max-w-md mx-auto"
 >
   {features.map((item, index) => (
     <motion.button
