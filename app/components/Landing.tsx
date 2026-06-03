@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import img2 from "@/public/assets/imgs/InShot_20260531_182633539-removebg-preview.png";
+import biomemetic from "@/public/assets/imgs/slazzer-preview-49lev.png"
 
 const features = [
   "چروک",
@@ -226,7 +227,7 @@ const [selectedFeature, setSelectedFeature] = useState("");
                 className="relative w-full h-full"
               >
                 <Image
-                  src={img2}
+                  src={biomemetic}
                   alt="کرم بیوممتیک ایتالیایی"
                   fill
                   onLoad={() => setImageLoaded(true)}
