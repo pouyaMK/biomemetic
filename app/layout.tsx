@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { yekanBakh, openSans } from "./style/font";
-import './global.css'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: "Biomemetic",
@@ -18,12 +18,12 @@ export default function RootLayout({
       lang="en"
       className={`h-full`}
     >
-      <body   className={`
-    ${yekanBakh.variable}
-    ${openSans.variable}
-    min-h-full
-    flex
-    flex-col
+      <body style={{ fontFamily: "var(--font-yekan-bakh)" }}  className={`
+      ${yekanBakh.variable}
+      ${openSans.variable}
+      min-h-full
+      flex
+      flex-col
   `}>{children}</body>
     </html>
   );

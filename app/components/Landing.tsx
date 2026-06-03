@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import img2 from "@/public/assets/imgs/InShot_20260531_182633539-removebg-preview.png";
 
-
 const features = [
   "چروک",
   "لک و تیرگی",

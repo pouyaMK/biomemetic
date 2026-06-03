@@ -1,0 +1,7 @@
+
+
+@import "tailwindcss";
+
+html {
+  font-family: var(--font-yekan-bakh);
+}
