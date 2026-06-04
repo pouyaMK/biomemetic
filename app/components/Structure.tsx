@@ -7,27 +7,27 @@ import img from "../../public/assets/imgs/1.png";
 const videos = [
   {
     id : 1,
-    src: "/assets/videos/11.mp4",
+    src: "/biomemetic/assets/videos/11.mp4",
     title: "کلاژن",
   },
   {
     id : 2,
-    src: "/assets/videos/12.mp4",
+    src: "/biomemetic/assets/videos/12.mp4",
     title: "الاستین",
   },
   {
     id : 3,
-    src: "/assets/videos/13.mp4",
+    src: "/biomemetic/assets/videos/13.mp4",
     title: "پپتاید",
   },
   {
     id : 4,
-    src: "/assets/videos/12.mp4",
+    src: "/biomemetic/assets/videos/12.mp4",
     title: "آلفاآربیوتین",
   },
   {
     id : 5,
-    src: "/assets/videos/11.mp4",
+    src: "/biomemetic/assets/videos/11.mp4",
     title: "نیاسینامید",
   },
 ];
