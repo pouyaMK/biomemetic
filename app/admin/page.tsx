@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { FaTrash } from "react-icons/fa";
 interface PhoneData {
   id: number;
   phone: string;
@@ -133,13 +133,13 @@ export default function AdminPage() {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100 via-white to-orange-200">
+      <div className="min-h-screen relative flex items-center justify-center overflow-hidden bg-linear-to-br from-orange-100 via-white to-orange-200">
   
         {/* bubbles */}
-        <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-gradient-to-br from-orange-400 to-orange-200 shadow-2xl animate-pulse" />
-        <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 shadow-xl animate-bounce opacity-80" />
-        <div className="absolute bottom-20 left-20 w-40 h-40 rounded-full bg-gradient-to-br from-orange-200 to-orange-400 shadow-2xl animate-pulse opacity-70" />
-        <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-gradient-to-br from-orange-500 to-orange-300 shadow-xl animate-bounce opacity-60" />
+        <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-linear-to-br from-orange-400 to-orange-200 shadow-2xl animate-pulse" />
+        <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-linear-to-br from-orange-300 to-orange-500 shadow-xl animate-bounce opacity-80" />
+        <div className="absolute bottom-20 left-20 w-40 h-40 rounded-full bg-linear-to-br from-orange-200 to-orange-400 shadow-2xl animate-pulse opacity-70" />
+        <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-linear-to-br from-orange-500 to-orange-300 shadow-xl animate-bounce opacity-60" />
         <div className="absolute top-1/2 left-5 w-20 h-20 rounded-full bg-orange-300/70 blur-sm shadow-lg animate-pulse" />
         <div className="absolute top-1/3 right-5 w-16 h-16 rounded-full bg-orange-400/60 shadow-xl animate-bounce" />
   
@@ -179,7 +179,7 @@ export default function AdminPage() {
           {/* button */}
           <button
             onClick={handleLogin}
-            className="w-full h-12 mt-4 rounded-xl font-black text-white shadow-lg bg-gradient-to-r from-orange-500 to-orange-400 hover:scale-[1.02] active:scale-95 transition"
+            className="w-full h-12 mt-4 rounded-xl font-black text-white shadow-lg bg-linear-to-r from-orange-500 to-orange-400 hover:scale-[1.02] active:scale-95 transition"
           >
             ورود به پنل
           </button>
@@ -302,7 +302,7 @@ export default function AdminPage() {
             >
               <div className="flex items-center gap-3">
                 {/* CHECKBOX */}
-                <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition flex-shrink-0 ${selected.includes(item.id) ? "bg-orange-500 border-orange-500" : "border-gray-200"}`}>
+                <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition shrink-0 ${selected.includes(item.id) ? "bg-orange-500 border-orange-500" : "border-gray-200"}`}>
                   {selected.includes(item.id) && (
                     <span className="text-white text-xs font-black">✓</span>
                   )}
@@ -329,9 +329,9 @@ export default function AdminPage() {
                     e.stopPropagation();
                     deletePhone(item.id);
                   }}
-                  className="w-8 h-8 flex items-center justify-center rounded-xl text-gray-300 hover:text-red-500 hover:bg-red-50 transition active:scale-[0.95]"
+                  className="w-8 h-8 flex items-center justify-center rounded-xl bg-red-100 text-red-500 hover:bg-red-200 transition active:scale-[0.95]"
                 >
-                  🗑️
+                   <FaTrash size={14} />
                 </button>
               </div>
             </div>
