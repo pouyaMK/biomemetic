@@ -133,49 +133,53 @@ export default function AdminPage() {
 
   if (!isLoggedIn) {
     return (
-      <div className="min-h-screen bg-orange-50 flex items-center justify-center px-4" dir="rtl">
-        <div className="w-full max-w-sm bg-white border border-orange-100 rounded-3xl shadow-sm p-8 space-y-5">
-          <div className="text-center space-y-1">
-            <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🔐</span>
-            </div>
-            <h1 className="text-xl font-black text-gray-800">پنل ادمین</h1>
-            <p className="text-sm text-gray-400">برای ورود اطلاعات خود را وارد کنید</p>
-          </div>
-
-          <div className="space-y-3">
-            <div className="space-y-1">
-              <label className="text-xs text-gray-500 font-medium">نام کاربری</label>
-              <input
-                type="text"
-                placeholder="pouya"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full h-12 border border-orange-200 rounded-xl px-4 outline-none focus:ring-2 focus:ring-orange-300 text-center transition"
-              />
-            </div>
-            <div className="space-y-1">
-              <label className="text-xs text-gray-500 font-medium">رمز عبور</label>
-              <input
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-                className="w-full h-12 border border-orange-200 rounded-xl px-4 outline-none focus:ring-2 focus:ring-orange-300 text-center transition"
-              />
-            </div>
-          </div>
-
+      <div className="min-h-screen relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-100 via-white to-orange-200">
+  
+        {/* bubbles */}
+        <div className="absolute top-10 left-10 w-24 h-24 rounded-full bg-gradient-to-br from-orange-400 to-orange-200 shadow-2xl animate-pulse" />
+        <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 shadow-xl animate-bounce opacity-80" />
+        <div className="absolute bottom-20 left-20 w-40 h-40 rounded-full bg-gradient-to-br from-orange-200 to-orange-400 shadow-2xl animate-pulse opacity-70" />
+        <div className="absolute bottom-10 right-10 w-28 h-28 rounded-full bg-gradient-to-br from-orange-500 to-orange-300 shadow-xl animate-bounce opacity-60" />
+        <div className="absolute top-1/2 left-5 w-20 h-20 rounded-full bg-orange-300/70 blur-sm shadow-lg animate-pulse" />
+        <div className="absolute top-1/3 right-5 w-16 h-16 rounded-full bg-orange-400/60 shadow-xl animate-bounce" />
+  
+        {/* login card */}
+        <div className="relative z-10 w-full max-w-md p-10 rounded-3xl bg-white/70 backdrop-blur-xl border border-white/40 shadow-2xl">
+  
+          <h1 className="text-3xl font-black text-center text-orange-500 mb-8">
+            ورود ادمین
+          </h1>
+  
+          {/* username */}
+          <input
+            type="text"
+            placeholder="نام کاربری"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="w-full h-12 mb-4 rounded-xl px-4 bg-white/80 border border-orange-100 shadow-sm outline-none focus:ring-4 focus:ring-orange-200 transition"
+          />
+  
+          {/* password */}
+          <input
+            type="password"
+            placeholder="رمز عبور"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+            className="w-full h-12 mb-2 rounded-xl px-4 bg-white/80 border border-orange-100 shadow-sm outline-none focus:ring-4 focus:ring-orange-200 transition"
+          />
+  
+          {/* error */}
           {error && (
-            <div className="bg-red-50 border border-red-100 rounded-xl px-4 py-3">
-              <p className="text-red-500 text-sm text-center">{error}</p>
-            </div>
+            <p className="text-red-500 text-sm text-center mb-3">
+              {error}
+            </p>
           )}
-
+  
+          {/* button */}
           <button
             onClick={handleLogin}
-            className="w-full h-12 bg-orange-500 hover:bg-orange-600 active:scale-[0.98] transition text-white font-black rounded-xl"
+            className="w-full h-12 mt-4 rounded-xl font-black text-white shadow-lg bg-gradient-to-r from-orange-500 to-orange-400 hover:scale-[1.02] active:scale-95 transition"
           >
             ورود به پنل
           </button>

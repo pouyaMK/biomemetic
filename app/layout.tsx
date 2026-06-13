@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { yekanBakh, openSans } from "./style/font";
 import './globals.css'
+import { Toaster} from "react-hot-toast"
 
 export const metadata: Metadata = {
   title: "Biomemetic",
@@ -28,7 +29,9 @@ export default function RootLayout({
       min-h-full
       flex
       flex-col
-  `}>{children}</body>
+  `}>{children}
+     <Toaster position="top-center" />
+     </body>
     </html>
   );
 }

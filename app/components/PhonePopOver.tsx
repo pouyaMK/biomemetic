@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { Toaster , toast } from "react-hot-toast"
 interface PhonePopupProps {
   open: boolean;
   setOpen: (value: boolean) => void;
@@ -51,17 +51,16 @@ const handleSubmit = async () => {
     });
 
     const data = await response.json();
-
+    
     console.log(data);
-
     setPhone("");
     setError("");
-
-    alert("شماره شما ثبت شد");
+    toast.success("شماره شما با موفقیت ثبت شد 🎉");
+    setOpen(false)
   } catch (error) {
     console.log(error);
-
-    alert("خطا در ثبت شماره");
+    toast.error("خطا در ثبت شماره ❌");
+    setOpen(false)
   }
 };
 
