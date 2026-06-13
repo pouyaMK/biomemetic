@@ -12,8 +12,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/biomemetic",
-  assetPrefix: "/biomemetic/",
+  basePath: "",
+  assetPrefix: "",
 };
 
 export default nextConfig;
