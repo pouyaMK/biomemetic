@@ -65,7 +65,7 @@ const [selectedFeature, setSelectedFeature] = useState("");
       </motion.p>
 
       {/* IMAGE SECTION */}
-      <div className="max-w-6xl mx-auto ">
+      <div className="max-w-6xl mx-auto my-0 py-0">
         <div className="flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -74,7 +74,7 @@ const [selectedFeature, setSelectedFeature] = useState("");
             viewport={{ once: true }}
             className="flex justify-center w-full"
           >
-            <div className="relative w-full max-w-175 h-[500px]">
+            <div className="relative w-full max-w-175 h-[380px]">
 
               {/* BUBBLE 1 */}
               <motion.div
