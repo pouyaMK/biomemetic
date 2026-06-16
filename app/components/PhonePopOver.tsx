@@ -17,8 +17,17 @@ export default function PhonePopup({
 
   const [phone, setPhone] = useState("");
 const [error, setError] = useState("");
+
+
+
+
 const handlePhoneChange = (value: string) => {
-  const cleaned = value.replace(/\D/g, "");
+  const englishNumber = value
+    .replace(/[۰-۹]/g, (d) => String("۰۱۲۳۴۵۶۷۸۹".indexOf(d)))
+    .replace(/[٠-٩]/g, (d) => String("٠١٢٣٤٥٦٧٨٩".indexOf(d)));
+
+  const cleaned = englishNumber.replace(/\D/g, "");
+
   if (cleaned.length <= 11) {
     setPhone(cleaned);
     setError("");

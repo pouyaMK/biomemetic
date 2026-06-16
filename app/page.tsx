@@ -9,6 +9,10 @@ export default function Home() {
       <Benefits />
       <Certifications />      
       <FAQ />
+      <div className="flex w-full gap-4 items-center justify-center">
+       <p>پشتیبانی</p>
+       <p>۰۹۹۱۸۷۰۳۰۲۱</p>
+      </div>
     </div>
   );
 }
