@@ -268,7 +268,26 @@ const [selectedFeature, setSelectedFeature] = useState("");
         </div>
       </div>
 
-      <div className="w-full text-center mt-3">مشکل پوستتون را انتخاب کنید </div>
+      <motion.div
+  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{
+    duration: 0.6,
+    ease: "easeOut",
+  }}
+  className="w-full text-center mt-3"
+>
+  <h2 className="text-sm md:text-md font-bold bg-linear-to-r from-orange-300 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+    مشکل پوستتون را انتخاب کنید
+  </h2>
+
+  <motion.div
+    initial={{ width: 0 }}
+    animate={{ width: 80 }}
+    transition={{ delay: 0.3, duration: 0.5 }}
+    className="h-1 mx-auto mt-2 rounded-full bg-linear-to-r from-orange-300 to-orange-500"
+  />
+</motion.div>
 
       {/* BUTTONS */}
       
@@ -412,7 +431,7 @@ const [selectedFeature, setSelectedFeature] = useState("");
       />
 
       {/* TEXT */}
-      <span className="relative z-20 text-orange-700">
+      <span className="relative z-20 text-orange-800">
         {item}
       </span>
     </motion.button>
