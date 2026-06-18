@@ -1,7 +1,6 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import { FaTrash } from "react-icons/fa";
+
 interface PhoneData {
   id: number;
   phone: string;
@@ -190,7 +189,6 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-orange-50" dir="rtl">
-
       {/* HEADER */}
       <div className="bg-white border-b border-orange-100 px-6 py-4 sticky top-0 z-10">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
@@ -312,9 +310,6 @@ export default function AdminPage() {
                   <p className="font-bold text-gray-800 text-base tracking-wide">
                     {item.phone}
                   </p>
-                  <span className="inline-block bg-orange-50 text-orange-500 text-xs font-medium px-3 py-1 rounded-full border border-orange-100">
-                    {item.feature}
-                  </span>
                 </div>
               </div>
 
@@ -329,9 +324,10 @@ export default function AdminPage() {
                     e.stopPropagation();
                     deletePhone(item.id);
                   }}
-                  className="w-8 h-8 flex items-center justify-center rounded-xl bg-red-100 text-red-500 hover:bg-red-200 transition active:scale-[0.95]"
+                  className="px-2 py-1 text-xs flex items-center justify-center rounded-xl bg-red-100 text-red-500 hover:bg-red-200 transition active:scale-[0.95]"
                 >
-                   <FaTrash size={14} />
+                  حذف
+                   {/* <FaTrash size={14} /> */}
                 </button>
               </div>
             </div>
